@@ -108,6 +108,8 @@ In:
 
 ```python
 def g(lst=[]):
+    lst.append(9)
+    return lst
 ```
 
 the empty list is created once and stored as the default value.
