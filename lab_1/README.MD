@@ -4,19 +4,19 @@ This lab demonstrates how Python handles object binding, rebinding, mutation, fu
 
 The program consists of six independent tasks (A–F). Each task explores a specific concept of Python’s object model and memory management using printed output, object IDs, and reference counts
 
-# Requirement
+## Requirement
 
 - Python 3.11+
 - Windows/Linux/macOS
 
-# Command to Run the Program
+## Command to Run the Program
 
 ```bash
 python src\lab_1.py
 ```
-# Description of program
+## Description of program
 
-### The program prints six structured sections (A–F), each focused on a specific Python memory and object behavior concept:
+### The program prints six structured sections (A-F), each focused on a specific Python memory and object behavior concept:
 
 - Binding vs Rebinding
 

@@ -1,4 +1,4 @@
-# Task A — Binding vs Rebinding
+## Task A - Binding vs Rebinding
 
 `b` still refers to the old value after `a = 7` because **names in Python are bindings to objects**, not containers that store values.
 
@@ -25,13 +25,13 @@ The object `3` itself is not modified (integers are immutable). Since `b` was st
 So:
 
 - names are bindings  
-- rebinding changes the name–object relationship  
+- rebinding changes the name-object relationship  
 - objects themselves are not modified  
 
 
 ---
 
-# Task B — Mutation vs Rebinding
+## Task B - Mutation vs Rebinding
 
 Both names see the change because they refer to the **same list object**.
 
@@ -50,9 +50,9 @@ When we execute:
 a.append(5)
 ```
 
-this is **mutation** — it modifies the existing object in place. Since both names reference the same object, both see the updated content.
+this is **mutation** - it modifies the existing object in place. Since both names reference the same object, both see the updated content.
 
-## Difference between mutation and rebinding
+### Difference between mutation and rebinding
 
 - **Mutation** changes the internal state of an existing object without changing its identity.  
 - **Rebinding** changes which object a name refers to.  
@@ -62,7 +62,7 @@ In this case, the list object itself was modified (mutation), so both names refl
 
 ---
 
-# Task C — Function Arguments Are New Bindings
+## Task C - Function Arguments Are New Bindings
 
 Mutation inside the function affects the caller because **argument passing in Python is binding, not copying**.
 
@@ -95,7 +95,7 @@ rebinding inside the function does not affect the caller’s variable.
 
 ---
 
-# Task D — Default Argument Trap
+## Task D - Default Argument Trap
 
 The list keeps growing because **default values are evaluated once**, at function definition time — not each time the function is called.
 
@@ -119,7 +119,7 @@ So:
 
 ---
 
-# Task E — Shallow Copy vs Deep Copy
+## Task E - Shallow Copy vs Deep Copy
 
 The difference between shallow copy and deep copy becomes visible with **nested objects**.
 
@@ -131,7 +131,7 @@ b = a.copy()
 c = copy.deepcopy(a)
 ```
 
-## Shallow copy
+### Shallow copy
 
 A shallow copy creates a new outer container, but the **nested objects are still shared**.
 
@@ -139,7 +139,7 @@ So `b` is a new list, but `b[0]` refers to the same inner list as `a[0]`.
 
 When the inner list is modified, both `a` and `b` reflect the change.
 
-## Deep copy
+### Deep copy
 
 A deep copy creates a new outer container **and recursively copies nested objects**.
 
@@ -155,7 +155,7 @@ In summary:
 
 ---
 
-# Task F — Reference Counting (CPython)
+## Task F - Reference Counting (CPython)
 
 The result for small integers like `5` may look unusual because of **CPython optimization**.
 
