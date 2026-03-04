@@ -1,6 +1,6 @@
 ## Task A - Binding vs Rebinding
 
-`b` still refers to the old value after `a = 7` because **names in Python are bindings to objects**, not containers that store values.
+`b` still refers to the old value after `a = 8` because **names in Python are bindings to objects**, not containers that store values.
 
 When we execute:
 
