@@ -14,7 +14,7 @@ both `a` and `b` are bound to the same integer object `3`.
 Later, when we execute:
 
 ```python
-a = 7
+a = 8
 ```
 
 this does **not modify the original integer object**. Instead, **rebinding changes the name–object relationship**:  
