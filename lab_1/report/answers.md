@@ -69,6 +69,9 @@ Mutation inside the function affects the caller because **argument passing in Py
 When the function is called:
 
 ```python
+def a_append(lst):
+    lst.append(7)
+
 a_append(a)
 ```
 
@@ -81,6 +84,8 @@ However, in:
 ```python
 def a_rebind(lst):
     lst = [7, 7, 8]
+
+a_rebind(a)
 ```
 
 the assignment creates a new list and rebinds the local name `lst` to it. This rebinding only changes the local name inside the function.
