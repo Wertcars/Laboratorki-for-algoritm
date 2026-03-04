@@ -18,7 +18,7 @@ a = 8
 ```
 
 this does **not modify the original integer object**. Instead, **rebinding changes the name–object relationship**:  
-the name `a` is now bound to a new integer object `7`.
+the name `a` is now bound to a new integer object `8`.
 
 The object `3` itself is not modified (integers are immutable). Since `b` was still bound to the original object `3`, it continues to refer to it.
 
