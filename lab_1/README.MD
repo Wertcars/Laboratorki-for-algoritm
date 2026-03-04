@@ -32,14 +32,10 @@ python src\lab_1.py
 
 ### Each section prints:
 
-- Clear section headers
-
-- Object values
+- Object values before and after changes
 
 - Object IDs (where relevant)
 
 - Reference counts (where relevant)
-
-- Separator lines between tasks
 
 #### The output is designed to visually demonstrate how Python manages object references and memory internally.
