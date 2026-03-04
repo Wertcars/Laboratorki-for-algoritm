@@ -14,7 +14,7 @@ The program consists of six independent tasks (A–F). Each task explores a spec
 ```bash
 python src\lab_1.py
 ```
-#Description of program
+# Description of program
 
 ### The program prints six structured sections (A–F), each focused on a specific Python memory and object behavior concept:
 
