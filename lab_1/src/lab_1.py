@@ -1,9 +1,8 @@
 #Task A - Binding vs Rebinding
-
 print("Task A — Binding vs Rebinding")
 
 a = 3
-b = 7
+b = a
 
 print(f"\nValua before rebinding a = {a}")
 print(f"Valua before rebinding b = {b}")
