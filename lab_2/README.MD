@@ -18,7 +18,7 @@ lab02/
 ├─ requirements.txt 
 │ 
 ├─ src/ 
-│   └─ your_code 
+│   └─ lab2.py
 │ 
 └─ report/ 
     └─ answers.md 
