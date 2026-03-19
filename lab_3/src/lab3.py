@@ -83,7 +83,7 @@ print("Task F - Functional Composition\n")
 
 numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9]
 
-result = sum((x ** 2 for x in numbers if x % 2 == 0))
+result = sum((lambda x: x ** 2)(n) for n in numbers if n % 2 == 0)
 
 print("Sum of squares of even numbers:", " + ".join(f"{n}**2" for n in numbers if n % 2 == 0), f"= {result}")
 
