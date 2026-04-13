@@ -26,7 +26,7 @@ export(student_a)
 
 print()
 print("What do we see: the class works without inheritance")
-print("Why: duck typing — it has a serialize() method, so it fits")
+print("Why: duck typing - it has a serialize() method, so it fits")
 
 print("-------------------------------------------------")
 
