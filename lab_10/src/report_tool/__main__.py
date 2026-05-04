@@ -1,10 +1,10 @@
 import argparse
 import logging
+import sys
 
 from report_tool import (
     parse_numbers,
     analyze_numbers,
-    build_report,
     build_sorted_report,
     save_report,
     read_file,
@@ -38,28 +38,61 @@ def main() -> None:
     )
 
     args = parser.parse_args()
-
     setup_logging(args.log_level)
 
-    logging.info("Reading input file...")
-    text = read_file(args.input)
+    logging.debug(f"Arguments received: {args}")
 
-    logging.info("Parsing numbers...")
-    numbers = parse_numbers(text)
+    try:
+        # --- READ ---
+        logging.info("Reading input file...")
+        text = read_file(args.input)
 
-    logging.info("Analyzing numbers...")
-    stats = analyze_numbers(numbers)
+        if not text.strip():
+            logging.warning("Input file is empty")
 
-    logging.info("Building report...")
-    if args.format == "text":
-        report = build_sorted_report(numbers, stats)
-    else:
-        report = build_json_report(stats)
+        logging.debug(f"Raw input content: {text}")
 
-    logging.info("Saving report...")
-    output_path = save_report(report, args.out)
+        # --- PARSE ---
+        logging.info("Parsing numbers...")
+        numbers = parse_numbers(text)
 
-    logging.info(f"Done. Report saved to: {output_path}")
+        if len(numbers) < 2:
+            logging.warning("Very few numbers provided (less than 2)")
+
+        logging.debug(f"Parsed numbers: {numbers}")
+
+        # --- ANALYZE ---
+        logging.info("Analyzing numbers...")
+        stats = analyze_numbers(numbers)
+
+        logging.debug(f"Computed statistics: {stats}")
+
+        # --- BUILD REPORT ---
+        logging.info("Building report...")
+        if args.format == "text":
+            report = build_sorted_report(numbers, stats)
+        else:
+            report = build_json_report(stats)
+
+        logging.debug(f"Generated report content:\n{report}")
+
+        # --- SAVE ---
+        logging.info("Saving report...")
+        output_path = save_report(report, args.out)
+
+        logging.info(f"Report successfully saved to: {output_path}")
+
+    except FileNotFoundError as e:
+        logging.error(f"File error: {e}")
+        sys.exit(1)
+
+    except ValueError as e:
+        logging.error(f"Data error: {e}")
+        sys.exit(1)
+
+    except Exception as e:
+        logging.error(f"Unexpected error: {e}")
+        sys.exit(1)
 
 
 if __name__ == "__main__":
