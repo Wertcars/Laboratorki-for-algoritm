@@ -1,0 +1,5 @@
+[
+  {"id": 1, "delay": 3, "good": true},
+  {"id": 2, "delay": 3, "good": false},
+  {"id": 3, "delay": 3, "good": true}
+]
