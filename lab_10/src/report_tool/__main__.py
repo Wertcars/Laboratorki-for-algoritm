@@ -42,8 +42,8 @@ def main() -> None:
 
     logging.debug(f"Arguments received: {args}")
 
+    
     try:
-        # --- READ ---
         logging.info("Reading input file...")
         text = read_file(args.input)
 
@@ -52,7 +52,7 @@ def main() -> None:
 
         logging.debug(f"Raw input content: {text}")
 
-        # --- PARSE ---
+        
         logging.info("Parsing numbers...")
         numbers = parse_numbers(text)
 
@@ -61,13 +61,13 @@ def main() -> None:
 
         logging.debug(f"Parsed numbers: {numbers}")
 
-        # --- ANALYZE ---
+        
         logging.info("Analyzing numbers...")
         stats = analyze_numbers(numbers)
 
         logging.debug(f"Computed statistics: {stats}")
 
-        # --- BUILD REPORT ---
+        
         logging.info("Building report...")
         if args.format == "text":
             report = build_sorted_report(numbers, stats)
@@ -76,7 +76,7 @@ def main() -> None:
 
         logging.debug(f"Generated report content:\n{report}")
 
-        # --- SAVE ---
+        
         logging.info("Saving report...")
         output_path = save_report(report, args.out)
 
