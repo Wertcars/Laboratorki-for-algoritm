@@ -19,6 +19,34 @@ The project demonstrates the difference between synchronous and asynchronous tas
 
 ---
 
+## Installing
+
+### 1. Create a virtual environment
+It is recommended to create a virtual environment to isolate dependencies:
+
+```
+cd lab_11
+python -m venv .venv
+```
+### Activate it:
+
+On Windows:
+```
+.venv\Scripts\activate
+```
+On Linux/macOS:
+```
+source .venv/bin/activate
+```
+
+### Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
 ## How to Run
 
 Run the tool as a CLI application:

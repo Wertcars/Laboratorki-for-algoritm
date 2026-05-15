@@ -22,6 +22,34 @@ The project also includes a full test suite covering both unit and CLI behavior.
 
 ---
 
+## Installing
+
+### 1. Create a virtual environment
+It is recommended to create a virtual environment to isolate dependencies:
+
+```
+cd lab_12
+python -m venv .venv
+```
+### Activate it:
+
+On Windows:
+```
+.venv\Scripts\activate
+```
+On Linux/macOS:
+```
+source .venv/bin/activate
+```
+
+### Install dependencies:
+
+```
+pip install -r requirements.txt
+```
+
+---
+
 ## Run
 
 ```bash
